@@ -38,7 +38,7 @@ def shuffle_image(image_list, shuffle_count):
                 break
 
 # 이미지를 랜덤하게 섞음 (횟수는 사용자 정의)
-shuffle_count = 3
+shuffle_count = 10
 start_image = random.sample(imgList, 9)
 empty_cell = (start_image.index(images[0]) // 3, start_image.index(images[0]) % 3)
 target = start_image.copy()
