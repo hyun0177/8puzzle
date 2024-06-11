@@ -2,6 +2,8 @@ import pygame
 import cv2
 import random
 import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import heapq
 
@@ -101,7 +103,7 @@ def draw_image(axes, state):
 
 
 
-shuffle_count = 10
+shuffle_count = 50
 start_image = random.sample(imgList, 9)
 empty_cell = (start_image.index(images[0]) // 3, start_image.index(images[0]) % 3)
 target = start_image.copy()
