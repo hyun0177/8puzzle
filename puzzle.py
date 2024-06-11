@@ -58,6 +58,7 @@ def add_point(event):
 
             # 서브플롯에 이미지 업데이트
             click_sound.play()
+            print(start_image)
             for i in range(9):
                 axes[i // 3][i % 3].clear()
                 axes[i // 3][i % 3].imshow(cv2.imread(start_image[i]))
@@ -79,6 +80,7 @@ target = start_image.copy()
 shuffle_image(target, shuffle_count)
 
 # 그리드 생성
+
 fig, axes = plt.subplots(3, 3, figsize=(5, 5))
 plt.suptitle("Game Image")
 # 서브플롯에 이미지 표시
@@ -91,13 +93,14 @@ for i in range(9):
 cid = plt.connect('button_press_event', add_point)
 plt.subplots_adjust(wspace=0.01, hspace=0.02)
 
-fig2 = plt.figure(figsize=(5, 5))
+fig2, axes2 = plt.subplots(3, 3, figsize=(5, 5))
+
 plt.suptitle("Target Image")
 for i in range(9):
     plt.subplot(3, 3, i + 1)
     plt.gca().axes.xaxis.set_visible(False)
     plt.gca().axes.yaxis.set_visible(False)
     plt.imshow(cv2.imread(target[i]))
-
+plt.subplots_adjust(wspace=0.01, hspace=0.02)
 # 플롯 표시
 plt.show()
